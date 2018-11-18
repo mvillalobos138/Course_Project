@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_page);
     }
 
-    // TODO: This is some retarted shit, dont know why its crashing
+    // TODO: This is some retarded shit, dont know why its crashing
     public void playTTT(View view) {
         Intent intent = new Intent(this, play_ttt.class);
         startActivity(intent);
