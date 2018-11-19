@@ -22,7 +22,9 @@
         <activity android:name=".TTT_AI" />
         <activity android:name=".TTT_PVP" />
         <activity android:name=".CNECT4_AI" />
-        <activity android:name=".CNECT4_PVP"></activity>
+        <activity android:name=".CNECT4_PVP" />
+        <activity android:name=".BTLESHIP_AI" />
+        <activity android:name=".BTLESHIP_PVP"></activity>
     </application>
 
 </manifest>
