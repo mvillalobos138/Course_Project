@@ -24,6 +24,7 @@
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="playBttleShip"
             android:text="Play Battleships" />
     </LinearLayout>
 
@@ -46,6 +47,7 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="playCnect4"
             android:text="Play Connect-4" />
     </LinearLayout>
 
@@ -92,8 +94,8 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Play Tic-Tac-Toe"
-            android:onClick="playTTT"/>
+            android:onClick="playttt"
+            android:text="Play Tic-Tac-Toe" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
