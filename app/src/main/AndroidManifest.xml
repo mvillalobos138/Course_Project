@@ -20,7 +20,9 @@
         <activity android:name=".play_bttle_ship" />
         <activity android:name=".play_ttt" />
         <activity android:name=".TTT_AI" />
-        <activity android:name=".TTT_PVP"></activity>
+        <activity android:name=".TTT_PVP" />
+        <activity android:name=".CNECT4_AI" />
+        <activity android:name=".CNECT4_PVP"></activity>
     </application>
 
 </manifest>
