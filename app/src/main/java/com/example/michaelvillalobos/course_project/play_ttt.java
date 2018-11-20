@@ -12,10 +12,6 @@ public class play_ttt extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_ttt);
     }
-    public void AI_ttt (View view) {
-        Intent intent = new Intent(this, TTT_AI.class);
-        startActivity(intent);
-    }
     public void PVP_ttt(View view) {
         Intent intent = new Intent(this, TTT_PVP.class);
         startActivity(intent);
