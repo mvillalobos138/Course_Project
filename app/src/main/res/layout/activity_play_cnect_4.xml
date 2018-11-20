@@ -48,6 +48,7 @@
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="AI_cnect4"
             android:text="VS AI Opponent" />
     </LinearLayout>
 
@@ -71,6 +72,7 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="PVP_cnect4"
             android:text="VS Another Player" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
