@@ -13,9 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
     }
-
-    // TODO: Think that I fixed it.
-
+    
     public void playttt(View view) {
         Intent intent = new Intent(this, play_ttt.class);
         startActivity(intent);
