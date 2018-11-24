@@ -44,11 +44,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="VS AI Opponent" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,6 +66,7 @@
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="VS Another Player" />
+            android:onClick="PVP_ttt"
+            android:text="VS Local Player" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
