@@ -29,8 +29,6 @@ public class TTT_PVP extends AppCompatActivity {
         final Button bt300 = findViewById(R.id.button300);
         final Button bt030 = findViewById(R.id.button030);
         final Button bt003 = findViewById(R.id.button003);
-        TextView p1 = findViewById(R.id.textView7);
-        TextView p2 = findViewById(R.id.textView8);
         final Button play = findViewById(R.id.button7);
         play.setEnabled(false);
 
