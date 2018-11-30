@@ -16,6 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".play_cnect_4" />
+        <activity android:name=".play_bttle_ship" />
+        <activity android:name=".play_ttt" />
+        <activity android:name=".TTT_PVP" />
+        <activity android:name=".CNECT4_AI" />
+        <activity android:name=".CNECT4_PVP" />
+        <activity android:name=".BTLESHIP_AI" />
+        <activity android:name=".BTLESHIP_PVP"></activity>
     </application>
 
 </manifest>

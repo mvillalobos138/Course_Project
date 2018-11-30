@@ -13,10 +13,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_page);
     }
-
-    // TODO: This is some retarded shit, dont know why its crashing
-    public void playTTT(View view) {
+    
+    public void playttt(View view) {
         Intent intent = new Intent(this, play_ttt.class);
+        startActivity(intent);
+    }
+    public void playCnect4(View view) {
+        Intent intent = new Intent(this, play_cnect_4.class);
+        startActivity(intent);
+    }
+    public void playBttleShip(View view) {
+        Intent intent = new Intent(this, play_bttle_ship.class);
         startActivity(intent);
     }
 }
