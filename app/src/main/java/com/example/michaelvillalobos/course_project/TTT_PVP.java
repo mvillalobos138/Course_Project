@@ -9,6 +9,8 @@ import android.widget.TextView;
 public class TTT_PVP extends AppCompatActivity {
     int playerTurn = 1;
     int spots = 0;
+    int P1Score = 0;
+    int P2Score = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -401,18 +403,21 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt010.getText().toString().equalsIgnoreCase("X")) {
                 if (bt001.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Top Row
+                    P1Score++;
                     return 1;
                 }
             }
             if (bt200.getText().toString().equalsIgnoreCase("X")) {
                 if (bt300.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Left Column
+                    P1Score++;
                     return 1;
                 }
             }
             if (bt020.getText().toString().equalsIgnoreCase("X")) {
                 if (bt003.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Diagonal top left -> bottom Right
+                    P1Score++;
                     return 1;
                 }
             }
@@ -422,15 +427,17 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt020.getText().toString().equalsIgnoreCase("X")) {
                 if (bt002.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Middle Row
+                    P1Score++;
                     return 1;
                 }
             }
         }
 
         if (bt300.getText().toString().equalsIgnoreCase("X")) {
-            if (bt003.getText().toString().equalsIgnoreCase("X")) {
+            if (bt030.getText().toString().equalsIgnoreCase("X")) {
                 if (bt003.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Bottom Row
+                    P1Score++;
                     return 1;
                 }
             }
@@ -440,6 +447,7 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt020.getText().toString().equalsIgnoreCase("X")) {
                 if (bt030.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Middle Column
+                    P1Score++;
                     return 1;
                 }
             }
@@ -449,15 +457,17 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt002.getText().toString().equalsIgnoreCase("X")) {
                 if (bt003.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Right Column
+                    P1Score++;
                     return 1;
                 }
             }
         }
 
         if (bt300.getText().toString().equalsIgnoreCase("X")) {
-            if (bt002.getText().toString().equalsIgnoreCase("X")) {
+            if (bt020.getText().toString().equalsIgnoreCase("X")) {
                 if (bt001.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Diagonal from bottom left -> top right
+                    P1Score++;
                     return 1;
                 }
             }
@@ -482,18 +492,21 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt010.getText().toString().equalsIgnoreCase("O")) {
                 if (bt001.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Top Row
+                    P2Score++;
                     return 2;
                 }
             }
             if (bt200.getText().toString().equalsIgnoreCase("O")) {
                 if (bt300.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Left Column
+                    P2Score++;
                     return 2;
                 }
             }
             if (bt020.getText().toString().equalsIgnoreCase("O")) {
                 if (bt003.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Diagonal top left -> bottom Right
+                    P2Score++;
                     return 2;
                 }
             }
@@ -503,6 +516,7 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt020.getText().toString().equalsIgnoreCase("O")) {
                 if (bt002.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Middle Row
+                    P2Score++;
                     return 2;
                 }
             }
@@ -512,6 +526,7 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt003.getText().toString().equalsIgnoreCase("O")) {
                 if (bt003.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Bottom Row
+                    P2Score++;
                     return 2;
                 }
             }
@@ -521,6 +536,7 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt020.getText().toString().equalsIgnoreCase("O")) {
                 if (bt030.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Middle Column
+                    P2Score++;
                     return 2;
                 }
             }
@@ -530,6 +546,7 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt002.getText().toString().equalsIgnoreCase("O")) {
                 if (bt003.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Right Column
+                    P2Score++;
                     return 2;
                 }
             }
@@ -539,6 +556,7 @@ public class TTT_PVP extends AppCompatActivity {
             if (bt002.getText().toString().equalsIgnoreCase("O")) {
                 if (bt001.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Diagonal from bottom left -> top right
+                    P2Score++;
                     return 2;
                 }
             }
