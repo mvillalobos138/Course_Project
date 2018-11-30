@@ -24,7 +24,8 @@
             android:id="@+id/button100"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            android:onClick="playAgain"/>
     </LinearLayout>
 
     <LinearLayout
@@ -179,21 +180,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="331dp"
-        android:layout_height="88dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="329dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="18dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout15"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout15">
 
         <TextView
             android:id="@+id/textView6"
@@ -201,6 +201,7 @@
             android:layout_height="wrap_content"
             android:text="Player 1's Turn"
             android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -221,14 +222,22 @@
         <TextView
             android:id="@+id/textView7"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="21dp"
             android:text="Player 1 Score: 0" />
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
+            android:layout_height="23dp"
             android:text="Player 2 Score: 0" />
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:onClick="playAgain"
+            android:text="Play Again"
+            android:textAppearance="@android:style/TextAppearance" />
     </LinearLayout>
 
 

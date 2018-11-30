@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TTT_PVP extends AppCompatActivity {
     int playerTurn = 1;
@@ -27,6 +29,10 @@ public class TTT_PVP extends AppCompatActivity {
         final Button bt300 = findViewById(R.id.button300);
         final Button bt030 = findViewById(R.id.button030);
         final Button bt003 = findViewById(R.id.button003);
+        TextView p1 = findViewById(R.id.textView7);
+        TextView p2 = findViewById(R.id.textView8);
+        final Button play = findViewById(R.id.button7);
+        play.setEnabled(false);
 
         bt100.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,12 +44,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -55,12 +61,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -78,12 +84,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -95,8 +101,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
+                    }
+                    else if(spots == 9) {
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -114,12 +124,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -131,12 +141,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -154,12 +164,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -171,12 +181,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -194,12 +204,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -211,12 +221,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -234,12 +244,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -251,12 +261,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -274,12 +284,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -291,12 +301,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -314,12 +324,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -331,12 +341,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -354,12 +364,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p1 = checkBoardX();
                     if(p1 == 1) {
-                        setResult(1);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 2's Turn");
@@ -371,12 +381,12 @@ public class TTT_PVP extends AppCompatActivity {
                     spots++;
                     int p2 = checkBoardO();
                     if(p2 == 2) {
-                        setResult(2);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else if(spots == 9) {
-                        setResult(3);
-                        finish();
+                        Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+                        play.setEnabled(true);
                     }
                     else
                         displayTurn.setText("Player 1's Turn");
@@ -396,6 +406,9 @@ public class TTT_PVP extends AppCompatActivity {
         Button bt300 = findViewById(R.id.button300);
         Button bt030 = findViewById(R.id.button030);
         Button bt003 = findViewById(R.id.button003);
+        TextView p1 = findViewById(R.id.textView7);
+        TextView p2 = findViewById(R.id.textView8);
+        Button play = findViewById(R.id.button7);
 
 
         // TODO: improve this flow, its just a rough template right now
@@ -404,6 +417,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt001.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Top Row
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -418,6 +432,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt003.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Diagonal top left -> bottom Right
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -428,6 +443,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt002.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Middle Row
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -448,6 +464,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt030.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Middle Column
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -458,6 +475,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt003.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Right Column
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -468,6 +486,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt001.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Diagonal from bottom left -> top right
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -493,6 +512,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt001.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Top Row
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
@@ -500,6 +520,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt300.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Left Column
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
@@ -507,6 +528,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt003.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Diagonal top left -> bottom Right
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
@@ -517,16 +539,18 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt002.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Middle Row
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
         }
 
         if (bt300.getText().toString().equalsIgnoreCase("O")) {
-            if (bt003.getText().toString().equalsIgnoreCase("O")) {
+            if (bt030.getText().toString().equalsIgnoreCase("O")) {
                 if (bt003.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Bottom Row
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
@@ -537,6 +561,7 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt030.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Middle Column
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
@@ -547,21 +572,96 @@ public class TTT_PVP extends AppCompatActivity {
                 if (bt003.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Right Column
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
         }
 
         if (bt300.getText().toString().equalsIgnoreCase("O")) {
-            if (bt002.getText().toString().equalsIgnoreCase("O")) {
+            if (bt020.getText().toString().equalsIgnoreCase("O")) {
                 if (bt001.getText().toString().equalsIgnoreCase("O")) {
                     // Winner by Diagonal from bottom left -> top right
                     P2Score++;
+                    Disable();
                     return 2;
                 }
             }
         }
 
         return 0;
+    }
+
+    public void playAgain(View view) {
+        Button bt100 = findViewById(R.id.button100);
+        Button bt010 = findViewById(R.id.button010);
+        Button bt001 = findViewById(R.id.button001);
+        Button bt200 = findViewById(R.id.button200);
+        Button bt020 = findViewById(R.id.button020);
+        Button bt002 = findViewById(R.id.button002);
+        Button bt300 = findViewById(R.id.button300);
+        Button bt030 = findViewById(R.id.button030);
+        Button bt003 = findViewById(R.id.button003);
+        TextView p1 = findViewById(R.id.textView7);
+        TextView p2 = findViewById(R.id.textView8);
+        Button play = findViewById(R.id.button7);
+        TextView displayTurn = findViewById(R.id.textView6);
+        spots = 0;
+
+        if(displayTurn.getText().toString().equalsIgnoreCase("Player 1's Turn")) {
+            displayTurn.setText("Player 2's Turn");
+        }
+        else
+            displayTurn.setText("Player 1's Turn");
+
+        bt001.setText("");
+        bt002.setText("");
+        bt003.setText("");
+        bt010.setText("");
+        bt020.setText("");
+        bt030.setText("");
+        bt100.setText("");
+        bt200.setText("");
+        bt300.setText("");
+
+        bt001.setEnabled(true);
+        bt002.setEnabled(true);
+        bt003.setEnabled(true);
+        bt010.setEnabled(true);
+        bt020.setEnabled(true);
+        bt030.setEnabled(true);
+        bt100.setEnabled(true);
+        bt200.setEnabled(true);
+        bt300.setEnabled(true);
+
+        play.setEnabled(false);
+        p1.setText("Player 1 Score: " + P1Score);
+        p2.setText("Player 2 Score: " + P2Score);
+    }
+
+    public void Disable() {
+        Button bt100 = findViewById(R.id.button100);
+        Button bt010 = findViewById(R.id.button010);
+        Button bt001 = findViewById(R.id.button001);
+        Button bt200 = findViewById(R.id.button200);
+        Button bt020 = findViewById(R.id.button020);
+        Button bt002 = findViewById(R.id.button002);
+        Button bt300 = findViewById(R.id.button300);
+        Button bt030 = findViewById(R.id.button030);
+        Button bt003 = findViewById(R.id.button003);
+
+        bt001.setEnabled(false);
+        bt002.setEnabled(false);
+        bt003.setEnabled(false);
+        bt010.setEnabled(false);
+        bt020.setEnabled(false);
+        bt030.setEnabled(false);
+        bt100.setEnabled(false);
+        bt200.setEnabled(false);
+        bt300.setEnabled(false);
+    }
+
+    public void onBackPressed() {
+        finish();
     }
 } // end class
