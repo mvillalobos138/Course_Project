@@ -3,7 +3,7 @@ package com.example.michaelvillalobos.course_project;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CNECT4_PVP extends AppCompatActivity {
+public class Connect4_PVP extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

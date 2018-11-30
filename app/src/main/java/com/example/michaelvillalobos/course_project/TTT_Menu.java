@@ -4,20 +4,17 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
-public class play_cnect_4 extends AppCompatActivity {
+public class TTT_Menu extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_cnect_4);
+        setContentView(R.layout.activity_play_ttt);
     }
-    public void AI_cnect4 (View view) {
-        Intent intent = new Intent(this, CNECT4_AI.class);
-        startActivity(intent);
-    }
-    public void PVP_cnect4(View view) {
-        Intent intent = new Intent(this, CNECT4_PVP.class);
+    public void PVP_ttt(View view) {
+        Intent intent = new Intent(this, TTT_PVP.class);
         startActivity(intent);
     }
 }

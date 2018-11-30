@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,15 +14,15 @@ public class MainActivity extends AppCompatActivity {
     }
     
     public void playttt(View view) {
-        Intent intent = new Intent(this, play_ttt.class);
+        Intent intent = new Intent(this, TTT_Menu.class);
         startActivity(intent);
     }
     public void playCnect4(View view) {
-        Intent intent = new Intent(this, play_cnect_4.class);
+        Intent intent = new Intent(this, Connect4_Menu.class);
         startActivity(intent);
     }
     public void playBttleShip(View view) {
-        Intent intent = new Intent(this, play_bttle_ship.class);
+        Intent intent = new Intent(this, Battleship_Menu.class);
         startActivity(intent);
     }
 }
