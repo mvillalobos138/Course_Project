@@ -15,17 +15,6 @@ public class play_ttt extends AppCompatActivity {
     }
     public void PVP_ttt(View view) {
         Intent intent = new Intent(this, TTT_PVP.class);
-        startActivityForResult(intent, 1);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(resultCode == 1)
-            Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
-        else if(resultCode == 2)
-            Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
-        else
-            Toast.makeText(getApplication().getApplicationContext(), "Tie Game!", Toast.LENGTH_LONG).show();
-
+        startActivity(intent);
     }
 }
