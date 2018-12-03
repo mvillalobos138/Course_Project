@@ -17,4 +17,9 @@ public class TTT_Menu extends AppCompatActivity {
         Intent intent = new Intent(this, TTT_PVP.class);
         startActivity(intent);
     }
+
+    public void Multi_ttt(View view) {
+        Intent intent = new Intent(this, TTT_Multi.class);
+        startActivity(intent);
+    }
 }

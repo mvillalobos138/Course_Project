@@ -23,7 +23,9 @@
         <activity android:name=".Connect4_AI" />
         <activity android:name=".Connect4_PVP" />
         <activity android:name=".Battleship_AI" />
-        <activity android:name=".Battleship_PVP"></activity>
+        <activity android:name=".Battleship_PVP"/>
+        <activity android:name=".TTT_Multi"/>
+
     </application>
 
 </manifest>
