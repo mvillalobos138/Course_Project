@@ -4,11 +4,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridView;
-import android.widget.ImageView;
 
 public class Connect4_PVP extends AppCompatActivity {
     GridView gridView;
     GridAdapter adapter;
+    View view;
 
     int[] array_stuff = {
             0, 1, 2, 3, 4, 5, 6,
@@ -30,7 +30,13 @@ public class Connect4_PVP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cnect4__pvp);
 
+        view = (View) findViewById(R.id.linearLayout8);
         gridView = (GridView) findViewById(R.id.grid_view);
+        adapter = new GridAdapter(this, array_stuff, images);
+        gridView.setAdapter(adapter);
+    }
+
+    public void connect4PlayAgain(View v) {
         adapter = new GridAdapter(this, array_stuff, images);
         gridView.setAdapter(adapter);
     }
