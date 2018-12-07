@@ -7,10 +7,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class GridAdapter extends BaseAdapter {
+    int p1 = 0;
+    int p2 = 0;
     int[] values;
     private int[] images;
     private Context mContext;
@@ -87,14 +90,14 @@ public class GridAdapter extends BaseAdapter {
                             imageView.setImageResource(Connect4_PVP.images[1]);
                             board[i][pos] = 1;
                             if (maxInLine(i, pos) >= 4) {
-                                Toast.makeText(mContext, "Game Over", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Game Over Player 1 Wins", Toast.LENGTH_SHORT).show();
                             }
                             playerID = 1;
                         } else {
                             imageView.setImageResource(Connect4_PVP.images[2]);
                             board[i][pos] = 2;
                             if (maxInLine(i, pos) >= 4) {
-                                Toast.makeText(mContext, "Game Over", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(mContext, "Game Over Player 2 Wins", Toast.LENGTH_SHORT).show();
                             }
                             playerID = 0;
                         }
@@ -197,4 +200,5 @@ public class GridAdapter extends BaseAdapter {
 
         return maxInLine;
     }
+
 }
