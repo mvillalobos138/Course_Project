@@ -25,14 +25,12 @@ public class TTT_Multi extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private String userID;
 
-    TextView c1 = findViewById(R.id.textView9);
-    TextView c2 = findViewById(R.id.textView10);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ttt_multi);
 
+        /* Initial setup for database connection */
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         tttDB = database.getReferenceFromUrl("https://tic-tac-toe-f7a06.firebaseio.com/");
@@ -40,6 +38,7 @@ public class TTT_Multi extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         userID = user.getUid();
 
+        /* Check for Successful Login */
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -52,12 +51,15 @@ public class TTT_Multi extends AppCompatActivity {
             }
         };
 
+        /* Listener for when data is altered within the Databae */
         DatabaseReference mchild = tttDB.child("tic-tac-toe-f7a06").child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2").child("c1");
         mchild.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 int val = Integer.parseInt(dataSnapshot.getValue(String.class));
-//                showData(dataSnapshot);
+                showData(dataSnapshot);
+                TextView c2 = findViewById(R.id.textView10);
+                toastMessage(String.valueOf(val));
                 c2.setText(val);
             }
 
@@ -69,12 +71,14 @@ public class TTT_Multi extends AppCompatActivity {
 
     }
 
+    /* Attempt to read data from the database and display it*/
     private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds : dataSnapshot.getChildren()) {
 //            try {
             TTTCellData userInfo = new TTTCellData();
             userInfo.setValue(ds.child(userID).getValue(TTTCellData.class).getCellValue()); // set the value of the cell
             TextView C1 = findViewById(R.id.textView9);
+            toastMessage(userID);
             C1.setText(userID);
 //            C1.setText(userInfo.getCellValue());
 //            }catch(Exception e){}
@@ -96,7 +100,7 @@ public class TTT_Multi extends AppCompatActivity {
     }
 
     private void toastMessage(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+        Toast.makeText(this, ":: " + message, Toast.LENGTH_LONG).show();
     }
 
 }
