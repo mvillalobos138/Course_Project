@@ -71,7 +71,7 @@ public class TTT_Multi extends AppCompatActivity {
 
     }
 
-    /* Attempt to read data from the database and display it*/
+    /* Attempt to read data from the database and display it */
     private void showData(DataSnapshot dataSnapshot) {
         for(DataSnapshot ds : dataSnapshot.getChildren()) {
 //            try {
