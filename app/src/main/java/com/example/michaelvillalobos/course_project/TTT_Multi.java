@@ -78,6 +78,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         final Button bt003 = findViewById(R.id.button003);
         final Button play = findViewById(R.id.button7);
         play.setEnabled(false);
+        DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+        tttdbWrite.child("PA").setValue("0");
 
         bt100.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -553,6 +555,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         bt300.setEnabled(true);
 
         play.setEnabled(false);
+        DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+        tttdbWrite.child("PA").setValue("0");
         p1.setText("Player 1 Score: " + P1Score);
         p2.setText("Player 2 Score: " + P2Score);
 
@@ -623,7 +627,16 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         final Button bt003 = findViewById(R.id.button003);
         final Button play = findViewById(R.id.button7);
         final TextView displayTurn = findViewById(R.id.textView6);
-//
+
+        String playAgain = dataSnapshot.child("PA").getValue(String.class);
+        int pa = Integer.parseInt(playAgain);
+        if(pa == 0) {
+            play.setEnabled(false);
+        }
+        else if(pa == 1) {
+            play.setEnabled(true);
+        }
+
         String val1 = dataSnapshot.child("c1").getValue(String.class);
         int num1 = Integer.parseInt(val1);
         if(num1 == 1)
@@ -709,6 +722,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         if(check == 1) {
             Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
             play.setEnabled(true);
+            DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+            tttdbWrite.child("PA").setValue("1");
             val1 = "0";
             val2 = "0";
             val3 = "0";
@@ -732,10 +747,14 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         else if(check == 2) {
             Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
             play.setEnabled(true);
+            DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+            tttdbWrite.child("PA").setValue("1");
         }
         else if(spots == 9) {
             Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
             play.setEnabled(true);
+            DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+            tttdbWrite.child("PA").setValue("1");
         }
         else if(playerTurn == 1) {
             displayTurn.setText("Player 1's Turn");
@@ -744,86 +763,6 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             displayTurn.setText("Player 2's Turn");
         }
 
-    }
-
-    public void setUI(DataSnapshot dataSnapshot) {
-        String val = dataSnapshot.child(childVal).getValue(String.class);
-        int num = Integer.parseInt(val);
-        final Button bt100 = findViewById(R.id.button100);
-        final Button bt010 = findViewById(R.id.button010);
-        final Button bt001 = findViewById(R.id.button001);
-        final Button bt200 = findViewById(R.id.button200);
-        final Button bt020 = findViewById(R.id.button020);
-        final Button bt002 = findViewById(R.id.button002);
-        final Button bt300 = findViewById(R.id.button300);
-        final Button bt030 = findViewById(R.id.button030);
-        final Button bt003 = findViewById(R.id.button003);
-        final Button play = findViewById(R.id.button7);
-        final TextView displayTurn = findViewById(R.id.textView6);
-
-        switch (buttonPress) {
-            case 1:
-                String val1 = dataSnapshot.child("c1").getValue(String.class);
-                int num1 = Integer.parseInt(val1);
-                if(num1 == 1)
-                    bt100.setText("X");
-                else if(num1 == 2)
-                    bt100.setText("O");
-                break;
-            case 2:
-                if(num == 1)
-                    bt010.setText("X");
-                else if(num == 2)
-                    bt010.setText("O");
-                break;
-            case 3:
-                if(num == 1)
-                    bt001.setText("X");
-                else if(num == 2)
-                    bt001.setText("O");
-                break;
-            case 4:
-                if(num == 1)
-                    bt200.setText("X");
-                else if(num == 2)
-                    bt200.setText("O");
-                break;
-            case 5:
-                if(num == 1)
-                    bt020.setText("X");
-                else if(num == 2)
-                    bt020.setText("O");
-                break;
-            case 6:
-                if(num == 1)
-                    bt002.setText("X");
-                else if(num == 2)
-                    bt002.setText("O");
-                break;
-            case 7:
-                if(num == 1)
-                    bt300.setText("X");
-                else if(num == 2)
-                    bt300.setText("O");
-                break;
-            case 8:
-                if(num == 1)
-                    bt030.setText("X");
-                else if(num == 2)
-                    bt030.setText("O");
-                break;
-            case 9:
-                if(num == 1)
-                    bt003.setText("X");
-                else if(num == 2)
-                    bt003.setText("O");
-                break;
-            default:
-                break;
-        }
-
-        buttonPress = 0;
-        num = 0;
     }
 
     @Override
