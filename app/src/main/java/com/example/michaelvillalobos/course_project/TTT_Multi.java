@@ -635,6 +635,15 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         }
         else if(pa == 1) {
             play.setEnabled(true);
+            bt001.setEnabled(true);
+            bt002.setEnabled(true);
+            bt003.setEnabled(true);
+            bt010.setEnabled(true);
+            bt020.setEnabled(true);
+            bt030.setEnabled(true);
+            bt100.setEnabled(true);
+            bt200.setEnabled(true);
+            bt300.setEnabled(true);
         }
 
         String val1 = dataSnapshot.child("c1").getValue(String.class);
