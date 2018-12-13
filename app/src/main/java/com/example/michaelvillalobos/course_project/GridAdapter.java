@@ -90,6 +90,8 @@ public class GridAdapter extends BaseAdapter {
                             imageView.setImageResource(Connect4_PVP.images[1]);
                             board[i][pos] = 1;
                             if (maxInLine(i, pos) >= 4) {
+                                Connect4_PVP.player = 1;
+                                Connect4_PVP.p1S++;
                                 Toast.makeText(mContext, "Game Over Player 1 Wins", Toast.LENGTH_SHORT).show();
                             }
                             playerID = 1;
@@ -97,6 +99,8 @@ public class GridAdapter extends BaseAdapter {
                             imageView.setImageResource(Connect4_PVP.images[2]);
                             board[i][pos] = 2;
                             if (maxInLine(i, pos) >= 4) {
+                                Connect4_PVP.player = 2;
+                                Connect4_PVP.p2S++;
                                 Toast.makeText(mContext, "Game Over Player 2 Wins", Toast.LENGTH_SHORT).show();
                             }
                             playerID = 0;

@@ -5,7 +5,7 @@ class TTTCellData {
     private int value;
 
     public TTTCellData(){
-        this.value = 10;
+        this.value = 0;
     }
 
     public int getCellValue() {
