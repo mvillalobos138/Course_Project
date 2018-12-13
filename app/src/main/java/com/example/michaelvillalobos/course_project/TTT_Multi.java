@@ -2,6 +2,7 @@ package com.example.michaelvillalobos.course_project;
 
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -566,6 +567,116 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
 
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
+//        setUI(dataSnapshot);
+        final Button bt100 = findViewById(R.id.button100);
+        final Button bt010 = findViewById(R.id.button010);
+        final Button bt001 = findViewById(R.id.button001);
+        final Button bt200 = findViewById(R.id.button200);
+        final Button bt020 = findViewById(R.id.button020);
+        final Button bt002 = findViewById(R.id.button002);
+        final Button bt300 = findViewById(R.id.button300);
+        final Button bt030 = findViewById(R.id.button030);
+        final Button bt003 = findViewById(R.id.button003);
+        final Button play = findViewById(R.id.button7);
+        final TextView displayTurn = findViewById(R.id.textView6);
+//
+        String val1 = dataSnapshot.child("c1").getValue(String.class);
+        int num1 = Integer.parseInt(val1);
+        if(num1 == 1)
+            bt100.setText("X");
+        else if(num1 == 2)
+            bt100.setText("O");
+
+        String val2 = dataSnapshot.child("c2").getValue(String.class);
+        int num2 = Integer.parseInt(val2);
+        if(num2 == 1)
+            bt010.setText("X");
+        else if(num2 == 2)
+            bt010.setText("O");
+
+        String val3 = dataSnapshot.child("c3").getValue(String.class);
+        int num3 = Integer.parseInt(val3);
+        if(num3 == 1)
+            bt001.setText("X");
+        else if(num3 == 2)
+            bt001.setText("O");
+
+        String val4 = dataSnapshot.child("c4").getValue(String.class);
+        int num4 = Integer.parseInt(val4);
+        if(num4 == 1)
+            bt200.setText("X");
+        else if(num4 == 2)
+            bt200.setText("O");
+
+        String val5 = dataSnapshot.child("c5").getValue(String.class);
+        int num5 = Integer.parseInt(val5);
+        if(num5 == 1)
+            bt020.setText("X");
+        else if(num5 == 2)
+            bt020.setText("O");
+
+        String val6 = dataSnapshot.child("c6").getValue(String.class);
+        int num6 = Integer.parseInt(val6);
+        if(num6 == 1)
+            bt002.setText("X");
+        else if(num6 == 2)
+            bt002.setText("O");
+
+        String val7 = dataSnapshot.child("c7").getValue(String.class);
+        int num7 = Integer.parseInt(val7);
+        if(num7 == 1)
+            bt300.setText("X");
+        else if(num7 == 2)
+            bt300.setText("O");
+
+        String val8 = dataSnapshot.child("c8").getValue(String.class);
+        int num8 = Integer.parseInt(val8);
+        if(num8 == 1)
+            bt030.setText("X");
+        else if(num8 == 2)
+            bt030.setText("O");
+
+        String val9 = dataSnapshot.child("c9").getValue(String.class);
+        int num9 = Integer.parseInt(val9);
+        if(num9 == 1)
+            bt003.setText("X");
+        else if(num9 == 2)
+            bt003.setText("O");
+
+
+        int check = checkBoard();
+        if(check == 1) {
+            Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
+            play.setEnabled(true);
+        }
+        else if(check == 2) {
+            Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
+            play.setEnabled(true);
+        }
+        else if(spots == 9) {
+            Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
+            play.setEnabled(true);
+        }
+        else if(playerTurn == 1) {
+            displayTurn.setText("Player 1's Turn");
+        }
+        else if(playerTurn == 2) {
+            displayTurn.setText("Player 2's Turn");
+        }
+
+        num1 = 0;
+        num2 = 0;
+        num3 = 0;
+        num4 = 0;
+        num5 = 0;
+        num6 = 0;
+        num7 = 0;
+        num8 = 0;
+        num9 = 0;
+
+    }
+
+    public void setUI(DataSnapshot dataSnapshot) {
         String val = dataSnapshot.child(childVal).getValue(String.class);
         int num = Integer.parseInt(val);
         final Button bt100 = findViewById(R.id.button100);
@@ -582,9 +693,11 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
 
         switch (buttonPress) {
             case 1:
-                if(num == 1)
+                String val1 = dataSnapshot.child("c1").getValue(String.class);
+                int num1 = Integer.parseInt(val1);
+                if(num1 == 1)
                     bt100.setText("X");
-                else if(num == 2)
+                else if(num1 == 2)
                     bt100.setText("O");
                 break;
             case 2:
@@ -638,27 +751,6 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             default:
                 break;
         }
-
-        int check = checkBoard();
-        if(check == 1) {
-            Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
-            play.setEnabled(true);
-        }
-        else if(check == 2) {
-            Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
-            play.setEnabled(true);
-        }
-        else if(spots == 9) {
-            Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
-            play.setEnabled(true);
-        }
-        else if(playerTurn == 1) {
-            displayTurn.setText("Player 1's Turn");
-        }
-        else if(playerTurn == 2) {
-            displayTurn.setText("Player 2's Turn");
-        }
-
 
         buttonPress = 0;
         num = 0;
