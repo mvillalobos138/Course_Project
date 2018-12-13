@@ -87,6 +87,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 1;
                     childVal = "c1";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt100.setEnabled(false);
                     spots++;
                 }
@@ -95,6 +97,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 1;
                     childVal = "c1";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt100.setEnabled(false);
                     spots++;
                 }
@@ -109,6 +113,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 2;
                     childVal = "c2";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt010.setEnabled(false);
                     spots++;
                 }
@@ -117,6 +123,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 2;
                     childVal = "c2";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt010.setEnabled(false);
                     spots++;
                 }
@@ -131,6 +139,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 3;
                     childVal = "c3";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt001.setEnabled(false);
                     spots++;
                 }
@@ -139,6 +149,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 3;
                     childVal = "c3";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt001.setEnabled(false);
                     spots++;
                 }
@@ -153,6 +165,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 4;
                     childVal = "c4";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt200.setEnabled(false);
                     spots++;
                 }
@@ -161,6 +175,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 4;
                     childVal = "c4";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt200.setEnabled(false);
                     spots++;
                 }
@@ -175,6 +191,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 5;
                     childVal = "c5";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt020.setEnabled(false);
                     spots++;
                 }
@@ -183,6 +201,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 5;
                     childVal = "c5";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt020.setEnabled(false);
                     spots++;
                 }
@@ -197,6 +217,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 6;
                     childVal = "c6";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt002.setEnabled(false);
                     spots++;
                 }
@@ -205,6 +227,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 6;
                     childVal = "c6";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt002.setEnabled(false);
                     spots++;
                 }
@@ -219,6 +243,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 7;
                     childVal = "c7";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt300.setEnabled(false);
                     spots++;
                 }
@@ -227,6 +253,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 7;
                     childVal = "c7";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt300.setEnabled(false);
                     spots++;
                 }
@@ -241,6 +269,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 8;
                     childVal = "c8";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt030.setEnabled(false);
                     spots++;
                 }
@@ -249,6 +279,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 8;
                     childVal = "c8";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt030.setEnabled(false);
                     spots++;
                 }
@@ -263,6 +295,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 9;
                     childVal = "c9";
                     playerTurn++;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P2");
                     bt003.setEnabled(false);
                     spots++;
                 }
@@ -271,6 +305,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                     buttonPress = 9;
                     childVal = "c9";
                     playerTurn--;
+                    DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
+                    tttdbWrite.child("Turn").setValue("P1");
                     bt003.setEnabled(false);
                     spots++;
                 }
@@ -567,6 +603,14 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
 
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
+        String turn = dataSnapshot.child("Turn").getValue(String.class);
+        if(turn.equalsIgnoreCase("P1")) {
+            playerTurn = 1;
+        }
+        else if(turn.equalsIgnoreCase("P2")) {
+            playerTurn = 2;
+        }
+
 //        setUI(dataSnapshot);
         final Button bt100 = findViewById(R.id.button100);
         final Button bt010 = findViewById(R.id.button010);
@@ -586,6 +630,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt100.setText("X");
         else if(num1 == 2)
             bt100.setText("O");
+        else
+            bt100.setText("");
 
         String val2 = dataSnapshot.child("c2").getValue(String.class);
         int num2 = Integer.parseInt(val2);
@@ -593,6 +639,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt010.setText("X");
         else if(num2 == 2)
             bt010.setText("O");
+        else
+            bt010.setText("");
 
         String val3 = dataSnapshot.child("c3").getValue(String.class);
         int num3 = Integer.parseInt(val3);
@@ -600,6 +648,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt001.setText("X");
         else if(num3 == 2)
             bt001.setText("O");
+        else
+            bt001.setText("");
 
         String val4 = dataSnapshot.child("c4").getValue(String.class);
         int num4 = Integer.parseInt(val4);
@@ -607,6 +657,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt200.setText("X");
         else if(num4 == 2)
             bt200.setText("O");
+        else
+            bt200.setText("");
 
         String val5 = dataSnapshot.child("c5").getValue(String.class);
         int num5 = Integer.parseInt(val5);
@@ -614,6 +666,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt020.setText("X");
         else if(num5 == 2)
             bt020.setText("O");
+        else
+            bt020.setText("");
 
         String val6 = dataSnapshot.child("c6").getValue(String.class);
         int num6 = Integer.parseInt(val6);
@@ -621,6 +675,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt002.setText("X");
         else if(num6 == 2)
             bt002.setText("O");
+        else
+            bt002.setText("");
 
         String val7 = dataSnapshot.child("c7").getValue(String.class);
         int num7 = Integer.parseInt(val7);
@@ -628,6 +684,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt300.setText("X");
         else if(num7 == 2)
             bt300.setText("O");
+        else
+            bt300.setText("");
 
         String val8 = dataSnapshot.child("c8").getValue(String.class);
         int num8 = Integer.parseInt(val8);
@@ -635,6 +693,8 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt030.setText("X");
         else if(num8 == 2)
             bt030.setText("O");
+        else
+            bt030.setText("");
 
         String val9 = dataSnapshot.child("c9").getValue(String.class);
         int num9 = Integer.parseInt(val9);
@@ -642,12 +702,32 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             bt003.setText("X");
         else if(num9 == 2)
             bt003.setText("O");
-
+        else
+            bt003.setText("");
 
         int check = checkBoard();
         if(check == 1) {
             Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
             play.setEnabled(true);
+            val1 = "0";
+            val2 = "0";
+            val3 = "0";
+            val4 = "0";
+            val5 = "0";
+            val6 = "0";
+            val7 = "0";
+            val8 = "0";
+            val9 = "0";
+
+            num1 = 0;
+            num2 = 0;
+            num3 = 0;
+            num4 = 0;
+            num5 = 0;
+            num6 = 0;
+            num7 = 0;
+            num8 = 0;
+            num9 = 0;
         }
         else if(check == 2) {
             Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
@@ -663,16 +743,6 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         else if(playerTurn == 2) {
             displayTurn.setText("Player 2's Turn");
         }
-
-        num1 = 0;
-        num2 = 0;
-        num3 = 0;
-        num4 = 0;
-        num5 = 0;
-        num6 = 0;
-        num7 = 0;
-        num8 = 0;
-        num9 = 0;
 
     }
 
