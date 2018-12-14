@@ -163,7 +163,6 @@ public class Connect4_AI extends AppCompatActivity {
 
         //CHECK EACH VALID MOVES __________________________________________________________________
 
-        System.out.println("MOVE 1");
         for(int move = 5; move >= 0; move--){
 
             if(move_1[move][0] == 0){
@@ -176,7 +175,7 @@ public class Connect4_AI extends AppCompatActivity {
         }
 
 
-        System.out.println("MOVE 2");
+
         for(int move1 = 5; move1 >= 0; move1--){
 
             if(move_2[move1][1] == 0){
@@ -188,7 +187,7 @@ public class Connect4_AI extends AppCompatActivity {
 
         }
 
-        System.out.println("MOVE 3");
+
         for(int move2 = 5; move2 >= 0; move2--){
 
             if(move_3[move2][2] == 0){
@@ -200,7 +199,7 @@ public class Connect4_AI extends AppCompatActivity {
 
         }
 
-        System.out.println("MOVE 4");
+
         for(int move = 5; move >= 0; move--){
 
             if(move_4[move][3] == 0){
@@ -212,7 +211,7 @@ public class Connect4_AI extends AppCompatActivity {
 
         }
 
-        System.out.println("MOVE 5");
+
         for(int move = 5; move >= 0; move--){
 
             if(move_5[move][4] == 0){
@@ -224,7 +223,7 @@ public class Connect4_AI extends AppCompatActivity {
 
         }
 
-        System.out.println("MOVE 6");
+
         for(int move = 5; move >= 0; move--){
 
             if(move_6[move][5] == 0){
@@ -236,7 +235,6 @@ public class Connect4_AI extends AppCompatActivity {
 
         }
 
-        System.out.println("MOVE 7");
         for(int move = 5; move >= 0; move--){
 
             if(move_7[move][6] == 0){
@@ -300,8 +298,16 @@ public class Connect4_AI extends AppCompatActivity {
                 winAt++;
                 num = winAt;
             } else {
+                for (int i = 0; i < array.length; i++) {
+                    winAt = array[i] > 2 ? i : winAt;
+                }
+                if (winAt != -1) {
+                    winAt++;
+                    num = winAt;
+                } else {
                     Random random = new Random();
                     num = random.nextInt(7) + 1;
+                }
             }
 
         }
