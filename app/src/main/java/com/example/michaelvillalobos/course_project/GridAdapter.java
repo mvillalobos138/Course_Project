@@ -96,13 +96,16 @@ public class GridAdapter extends BaseAdapter {
                     } else {
                         moveHere = true;
                     }
+                    if (board[i][pos] == 1 || board[i][pos] == 2) {
+                        return;
+                    }
                     if (moveHere && !Connect4_Menu.gameover) {
                         v.setClickable(false);
                         ImageView imageView = v.findViewById(R.id.tile_image);
                         if (playerID == 1) {
                             imageView.setImageResource(Connect4_PVP.images[1]);
                             board[i][pos] = 1;
-                            if (maxInLine(i, pos) >= 4) {
+                            if (maxInLine(i, pos, board) >= 4) {
                                 if (vsP) {
                                     Connect4_PVP.player = 1;
                                     Connect4_PVP.p1S++;
@@ -117,7 +120,11 @@ public class GridAdapter extends BaseAdapter {
                                 if (!Connect4_Menu.gameover) {
                                     Connect4_AI.Update(values);
                                     Connect4_AI.Move(mContext, gridView, adapter, values);
-                                    if (maxInLine(Connect4_AI.computerI, Connect4_AI.computerY) >= 4) {
+                                    View g = getView(7 * Connect4_AI.computerI + Connect4_AI.computerY, null, null);
+
+                                    g.setClickable(false);
+
+                                    if (maxInLine(Connect4_AI.computerI, Connect4_AI.computerY, board) >= 4) {
                                         Connect4_AI.player = 2;
                                         Connect4_AI.p2S++;
                                         Toast.makeText(mContext, "Game Over Computer Wins", Toast.LENGTH_SHORT).show();
@@ -130,7 +137,7 @@ public class GridAdapter extends BaseAdapter {
                         } else {
                             imageView.setImageResource(Connect4_PVP.images[2]);
                             board[i][pos] = 2;
-                            if (maxInLine(i, pos) >= 4) {
+                            if (maxInLine(i, pos, board) >= 4) {
                                 if (vsP) {
                                     Connect4_PVP.player = 2;
                                     Connect4_PVP.p2S++;
@@ -156,7 +163,7 @@ public class GridAdapter extends BaseAdapter {
         return tile;
     }
 
-    private int maxInLine(int moveX, int moveY) {
+    static int maxInLine(int moveX, int moveY, int[][] board) {
         int playerMove = board[moveX][moveY];
         int maxInLine = 0;
 

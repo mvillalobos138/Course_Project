@@ -9,19 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Connect4_Menu" />
-        <activity android:name=".TTT_Menu" />
-        <activity android:name=".TTT_PVP" />
-        <activity android:name=".Connect4_AI" />
-        <activity android:name=".Connect4_PVP" />
-        <activity android:name=".TTT_Multi"/>
+        <activity android:name=".Connect4_Menu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TTT_Menu"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TTT_PVP"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Connect4_AI"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Connect4_PVP"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TTT_Multi"
+            android:screenOrientation="portrait"/>
 
     </application>
 

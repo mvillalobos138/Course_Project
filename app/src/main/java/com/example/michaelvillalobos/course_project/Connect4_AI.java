@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import java.util.Random;
+
 public class Connect4_AI extends AppCompatActivity {
     GridView gridView;
     GridAdapter adapter;
@@ -74,7 +76,7 @@ public class Connect4_AI extends AppCompatActivity {
         array_stuff = values;
         int[][] newBoard = computer_make_move(GridAdapter.board);
         for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
+            for (int j = 0; j < 7; j++) {
                 array_stuff[i * 7 + j] = newBoard[i][j];
                 GridAdapter.board[i][j] = newBoard[i][j];
             }
@@ -245,22 +247,105 @@ public class Connect4_AI extends AppCompatActivity {
             }
 
         }
-        //PRINTS OUTPUT ____________________________________________________________________________
-        System.out.println("Print MOVE3");
-        for (int z = 0; z < 6; z++) {
-            for(int rq = 0; rq < 7; rq++) {
 
-                System.out.print(move_4[z][rq]);
+        int max1 = GridAdapter.maxInLine(c_1, r_1, move_1);
+        int max2 = GridAdapter.maxInLine(c_2, r_2, move_2);
+        int max3 = GridAdapter.maxInLine(c_3, r_3, move_3);
+        int max4 = GridAdapter.maxInLine(c_4, r_4, move_4);
+        int max5 = GridAdapter.maxInLine(c_5, r_5, move_5);
+        int max6 = GridAdapter.maxInLine(c_6, r_6, move_6);
+        int max7 = GridAdapter.maxInLine(c_7, r_7, move_7);
 
-            }
-            System.out.println("");
+        int[] array = {max1, max2, max3, max4, max5, max6, max7};
+
+        int winAt = -1;
+
+        for (int i = 0; i < array.length; i++) {
+            winAt = array[i] > 3 ? i : winAt;
         }
-        System.out.println("_______________________");
 
+        int num;
+        if (winAt != -1) {
+            winAt++;
+            num = winAt;
+        } else {
+            move_1[c_1][r_1] = 1;
+            move_2[c_2][r_2] = 1;
+            move_3[c_3][r_3] = 1;
+            move_4[c_4][r_4] = 1;
+            move_5[c_5][r_5] = 1;
+            move_6[c_6][r_6] = 1;
+            move_7[c_7][r_7] = 1;
 
-        computerI = c_3;
-        computerY = r_3;
-        return move_3;
+            max1 = GridAdapter.maxInLine(c_1, r_1, move_1);
+            max2 = GridAdapter.maxInLine(c_2, r_2, move_2);
+            max3 = GridAdapter.maxInLine(c_3, r_3, move_3);
+            max4 = GridAdapter.maxInLine(c_4, r_4, move_4);
+            max5 = GridAdapter.maxInLine(c_5, r_5, move_5);
+            max6 = GridAdapter.maxInLine(c_6, r_6, move_6);
+            max7 = GridAdapter.maxInLine(c_7, r_7, move_7);
+
+            array[0] = max1;
+            array[1] = max2;
+            array[2] = max3;
+            array[3] = max4;
+            array[4] = max5;
+            array[5] = max6;
+            array[6] = max7;
+
+            for (int i = 0; i < array.length; i++) {
+                winAt = array[i] > 3 ? i : winAt;
+            }
+            if (winAt != -1) {
+                winAt++;
+                num = winAt;
+            } else {
+                    Random random = new Random();
+                    num = random.nextInt(7) + 1;
+            }
+
+        }
+        move_1[c_1][r_1] = 2;
+        move_2[c_2][r_2] = 2;
+        move_3[c_3][r_3] = 2;
+        move_4[c_4][r_4] = 2;
+        move_5[c_5][r_5] = 2;
+        move_6[c_6][r_6] = 2;
+        move_7[c_7][r_7] = 2;
+        switch(num) {
+
+            case 1:
+                computerI = c_1;
+                computerY = r_1;
+                return move_1;
+            case 2:
+                computerI = c_2;
+                computerY = r_2;
+                return move_2;
+            case 3:
+                computerI = c_3;
+                computerY = r_3;
+                return move_3;
+            case 4:
+                computerI = c_4;
+                computerY = r_4;
+                return move_4;
+            case 5:
+                computerI = c_5;
+                computerY = r_5;
+                return move_5;
+            case 6:
+                computerI = c_6;
+                computerY = r_6;
+                return move_6;
+            case 7:
+                computerI = c_7;
+                computerY = r_7;
+                return move_7;
+            default:
+                break;
+        }
+        return current_board;
     }
 }
 
