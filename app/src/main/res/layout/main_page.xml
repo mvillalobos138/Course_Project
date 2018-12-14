@@ -20,12 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="playBttleShip"
-            android:text="Play Battleships" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,7 +65,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="211dp"
-            android:text="Welcome to the arcade! Please choose whatever game your eager little heart desires!"
+            android:text="Welcome to the arcade! Please Select a game from one of the options below!"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textStyle="bold" />
     </LinearLayout>

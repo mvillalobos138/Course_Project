@@ -4,11 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.TextView;
 
 public class Connect4_PVP extends AppCompatActivity {
     GridView gridView;
     GridAdapter adapter;
     View view;
+    static int player = 0;
+    static int p1S = 0;
+    static int p2S = 0;
 
     int[] array_stuff = {
             0, 1, 2, 3, 4, 5, 6,
@@ -30,6 +34,7 @@ public class Connect4_PVP extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cnect4__pvp);
 
+
         view = (View) findViewById(R.id.linearLayout8);
         gridView = (GridView) findViewById(R.id.grid_view);
         adapter = new GridAdapter(this, array_stuff, images);
@@ -38,6 +43,15 @@ public class Connect4_PVP extends AppCompatActivity {
 
     public void connect4PlayAgain(View v) {
         adapter = new GridAdapter(this, array_stuff, images);
+        TextView winner = findViewById(R.id.textView11);
+        TextView p1Score = findViewById(R.id.textView12);
+        TextView p2Score = findViewById(R.id.textView13);
+        if(player == 1)
+            winner.setText("Player 1 is the winner!");
+        else
+            winner.setText("Player 2 is the winner!");
+        p1Score.setText("Player 1 Score: " + p1S);
+        p2Score.setText("Player 2 Score: " + p2S);
         gridView.setAdapter(adapter);
     }
 }
