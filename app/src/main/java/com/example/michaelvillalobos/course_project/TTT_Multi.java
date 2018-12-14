@@ -554,7 +554,7 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         bt200.setEnabled(true);
         bt300.setEnabled(true);
 
-        play.setEnabled(false);
+//        play.setEnabled(false);
         DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
         tttdbWrite.child("PA").setValue("0");
         p1.setText("Player 1 Score: " + P1Score);
@@ -615,7 +615,6 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             playerTurn = 2;
         }
 
-//        setUI(dataSnapshot);
         final Button bt100 = findViewById(R.id.button100);
         final Button bt010 = findViewById(R.id.button010);
         final Button bt001 = findViewById(R.id.button001);
