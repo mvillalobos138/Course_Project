@@ -359,6 +359,7 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
                 if (bt300.getText().toString().equalsIgnoreCase("X")) {
                     // Winner by Left Column
                     P1Score++;
+                    Disable();
                     return 1;
                 }
             }
@@ -633,7 +634,7 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             play.setEnabled(false);
         }
         else if(pa == 1) {
-//            play.setEnabled(true);
+            play.setEnabled(true);
             bt001.setEnabled(true);
             bt002.setEnabled(true);
             bt003.setEnabled(true);
@@ -729,7 +730,7 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         int check = checkBoard();
         if(check == 1) {
             Toast.makeText(getApplication().getApplicationContext(), "Player 1 Wins!", Toast.LENGTH_LONG).show();
-            play.setEnabled(true);
+//            play.setEnabled(true);
             DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
             tttdbWrite.child("PA").setValue("1");
             val1 = "0";
@@ -754,13 +755,13 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
         }
         else if(check == 2) {
             Toast.makeText(getApplication().getApplicationContext(), "Player 2 Wins!", Toast.LENGTH_LONG).show();
-            play.setEnabled(true);
+//            play.setEnabled(true);
             DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
             tttdbWrite.child("PA").setValue("1");
         }
         else if(spots == 9) {
             Toast.makeText(getApplication().getApplicationContext(), "Tied Game!", Toast.LENGTH_LONG).show();
-            play.setEnabled(true);
+//            play.setEnabled(true);
             DatabaseReference tttdbWrite = tttDB.child("user").child("15BPPryfz1SjnUZE4nYbWntpwni2");
             tttdbWrite.child("PA").setValue("1");
         }
