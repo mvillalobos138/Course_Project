@@ -15,6 +15,8 @@ public class GridAdapter extends BaseAdapter {
     private int[] images;
     private Context mContext;
     View view;
+    private GridView gridView;
+    private GridAdapter adapter;
 
     private int[][] board;
     private int playerID;
@@ -25,22 +27,28 @@ public class GridAdapter extends BaseAdapter {
     // 1 - Red (Player 1)
     // 2 - Black (Player 2)
 
-    public GridAdapter(Context mContext, int[] values, int[] images) {
+    public GridAdapter(Context mContext, int[] values, int[] images, GridView gridView, GridAdapter adapter) {
         this.mContext = mContext;
         this.values = values;
         this.images = images;
+        this.gridView = gridView;
+        this.adapter = adapter;
         board = new int[6][7];
         for(int i = 0; i < 6; i++) {
             for(int j = 0; j < 7; j++) {
-                board[i][j] = 0;
+                board[i][j] = values[i * 7 + j];
             }
         }
-        playerID = 0;
+        playerID = 1;
     }
 
     @Override
     public int getCount() {
         return values.length;
+    }
+
+    public int[] getValues() {
+        return values;
     }
 
     @Override
@@ -62,7 +70,13 @@ public class GridAdapter extends BaseAdapter {
             tile = inflater.inflate(R.layout.tile, null);
             ImageView imageView = (ImageView)
                     tile.findViewById(R.id.tile_image);
-            imageView.setImageResource(images[0]);
+            if (values[position] == 0) {
+                imageView.setImageResource(images[0]);
+            } else if (values[position] == 1) {
+                imageView.setImageResource(images[1]);
+            } else {
+                imageView.setImageResource(images[2]);
+            }
             tile.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -83,21 +97,24 @@ public class GridAdapter extends BaseAdapter {
                     if (moveHere) {
                         v.setClickable(false);
                         ImageView imageView = v.findViewById(R.id.tile_image);
-                        if (playerID == 0) {
+                        if (playerID == 1) {
                             imageView.setImageResource(Connect4_PVP.images[1]);
                             board[i][pos] = 1;
                             if (maxInLine(i, pos) >= 4) {
                                 Toast.makeText(mContext, "Game Over", Toast.LENGTH_SHORT).show();
                             }
-                            playerID = 1;
+                            playerID = 2;
                         } else {
                             imageView.setImageResource(Connect4_PVP.images[2]);
                             board[i][pos] = 2;
                             if (maxInLine(i, pos) >= 4) {
                                 Toast.makeText(mContext, "Game Over", Toast.LENGTH_SHORT).show();
                             }
-                            playerID = 0;
+                            playerID = 1;
                         }
+                        values[position] = playerID;
+                        Connect4_PVP.Update(values);
+                        Connect4_PVP.Move(mContext, gridView, adapter, values);
                     } else {
                         Toast.makeText(mContext, "These things don't float!", Toast.LENGTH_SHORT).show();
                     }
