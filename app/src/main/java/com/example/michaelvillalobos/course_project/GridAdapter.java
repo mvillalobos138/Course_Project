@@ -164,6 +164,9 @@ public class GridAdapter extends BaseAdapter {
     }
 
     static int maxInLine(int moveX, int moveY, int[][] board) {
+        if (moveX == -1) {
+            return 0;
+        }
         int playerMove = board[moveX][moveY];
         int maxInLine = 0;
 

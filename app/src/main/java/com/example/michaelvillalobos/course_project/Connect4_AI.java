@@ -86,9 +86,6 @@ public class Connect4_AI extends AppCompatActivity {
     }
 
     static private int[][] computer_make_move(int[][] current_board){
-        int row = 7;
-        int column = 6;
-        int count = 42;
 
 
         int[][] move_1 = new int[6][7];
@@ -99,26 +96,30 @@ public class Connect4_AI extends AppCompatActivity {
         int[][] move_6 = new int[6][7];
         int[][] move_7 = new int[6][7];
 
-        int c_1 = 0;
-        int r_1 = 0;
 
-        int c_2 = 0;
-        int r_2 = 0;
+        int c_1 = -1;
+        int r_1 = -1;
 
-        int c_3 = 0;
-        int r_3 = 0;
+        int c_2 = -1;
+        int r_2 = -1;
 
-        int c_4 = 0;
-        int r_4 = 0;
+        int c_3 = -1;
+        int r_3 = -1;
 
-        int c_5 = 0;
-        int r_5 = 0;
+        int c_4 = -1;
+        int r_4 = -1;
 
-        int c_6 = 0;
-        int r_6 = 0;
+        int c_5 = -1;
+        int r_5 = -1;
 
-        int c_7 = 0;
-        int r_7 = 0;
+        int c_6 = -1;
+        int r_6 = -1;
+
+        int c_7 = -1;
+        int r_7 = -1;
+
+
+
 
 
 
@@ -166,6 +167,7 @@ public class Connect4_AI extends AppCompatActivity {
         for(int move = 5; move >= 0; move--){
 
             if(move_1[move][0] == 0){
+
                 move_1[move][0] = 2;
                 c_1 = move;
                 r_1 = 0;
@@ -179,6 +181,7 @@ public class Connect4_AI extends AppCompatActivity {
         for(int move1 = 5; move1 >= 0; move1--){
 
             if(move_2[move1][1] == 0){
+
                 move_2[move1][1] = 2;
                 c_2 = move1;
                 r_2 = 1;
@@ -191,6 +194,7 @@ public class Connect4_AI extends AppCompatActivity {
         for(int move2 = 5; move2 >= 0; move2--){
 
             if(move_3[move2][2] == 0){
+
                 move_3[move2][2] = 2;
                 c_3 = move2;
                 r_3 = 2;
@@ -203,6 +207,7 @@ public class Connect4_AI extends AppCompatActivity {
         for(int move = 5; move >= 0; move--){
 
             if(move_4[move][3] == 0){
+
                 move_4[move][3] = 2;
                 c_4 = move;
                 r_4 = 3;
@@ -215,6 +220,7 @@ public class Connect4_AI extends AppCompatActivity {
         for(int move = 5; move >= 0; move--){
 
             if(move_5[move][4] == 0){
+
                 move_5[move][4] = 2;
                 c_5 = move;
                 r_5 = 4;
@@ -227,6 +233,7 @@ public class Connect4_AI extends AppCompatActivity {
         for(int move = 5; move >= 0; move--){
 
             if(move_6[move][5] == 0){
+
                 move_6[move][5] = 2;
                 c_6 = move;
                 r_6 = 5;
@@ -245,6 +252,33 @@ public class Connect4_AI extends AppCompatActivity {
             }
 
         }
+
+
+
+        Boolean[] can_moves = {true, true, true, true, true, true, true};
+
+        if(c_1 == -1) {
+            can_moves[0] = false;
+        }
+        if(c_2 == -1) {
+            can_moves[1] = false;
+        }
+        if(c_3 == -1) {
+            can_moves[2] = false;
+        }
+        if(c_4 == -1) {
+            can_moves[3] = false;
+        }
+        if(c_5 == -1) {
+            can_moves[4] = false;
+        }
+        if(c_6 == -1) {
+            can_moves[5] = false;
+        }
+        if(c_7 == -1) {
+            can_moves[6] = false;
+        }
+
 
         int max1 = GridAdapter.maxInLine(c_1, r_1, move_1);
         int max2 = GridAdapter.maxInLine(c_2, r_2, move_2);
@@ -267,13 +301,28 @@ public class Connect4_AI extends AppCompatActivity {
             winAt++;
             num = winAt;
         } else {
-            move_1[c_1][r_1] = 1;
-            move_2[c_2][r_2] = 1;
-            move_3[c_3][r_3] = 1;
-            move_4[c_4][r_4] = 1;
-            move_5[c_5][r_5] = 1;
-            move_6[c_6][r_6] = 1;
-            move_7[c_7][r_7] = 1;
+
+            if (can_moves[0]) {
+                move_1[c_1][r_1] = 1;
+            }
+            if (can_moves[1]) {
+                move_2[c_2][r_2] = 1;
+            }
+            if (can_moves[2]) {
+                move_3[c_3][r_3] = 1;
+            }
+            if (can_moves[3]) {
+                move_4[c_4][r_4] = 1;
+            }
+            if (can_moves[4]) {
+                move_5[c_5][r_5] = 1;
+            }
+            if (can_moves[5]) {
+                move_6[c_6][r_6] = 1;
+            }
+            if (can_moves[6]) {
+                move_7[c_7][r_7] = 1;
+            }
 
             max1 = GridAdapter.maxInLine(c_1, r_1, move_1);
             max2 = GridAdapter.maxInLine(c_2, r_2, move_2);
@@ -311,13 +360,33 @@ public class Connect4_AI extends AppCompatActivity {
             }
 
         }
-        move_1[c_1][r_1] = 2;
-        move_2[c_2][r_2] = 2;
-        move_3[c_3][r_3] = 2;
-        move_4[c_4][r_4] = 2;
-        move_5[c_5][r_5] = 2;
-        move_6[c_6][r_6] = 2;
-        move_7[c_7][r_7] = 2;
+        if (can_moves[0]) {
+            move_1[c_1][r_1] = 2;
+        }
+        if (can_moves[1]) {
+            move_2[c_2][r_2] = 2;
+        }
+        if (can_moves[2]) {
+            move_3[c_3][r_3] = 2;
+        }
+        if (can_moves[3]) {
+            move_4[c_4][r_4] = 2;
+        }
+        if (can_moves[4]) {
+            move_5[c_5][r_5] = 2;
+        }
+        if (can_moves[5]) {
+            move_6[c_6][r_6] = 2;
+        }
+        if (can_moves[6]) {
+            move_7[c_7][r_7] = 2;
+        }
+
+        Random random = new Random();
+        while(!can_moves[num - 1]) {
+            num = random.nextInt(7) + 1;
+        }
+
         switch(num) {
 
             case 1:
