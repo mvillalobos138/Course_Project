@@ -633,7 +633,7 @@ public class TTT_Multi extends AppCompatActivity implements ValueEventListener {
             play.setEnabled(false);
         }
         else if(pa == 1) {
-            play.setEnabled(true);
+//            play.setEnabled(true);
             bt001.setEnabled(true);
             bt002.setEnabled(true);
             bt003.setEnabled(true);
